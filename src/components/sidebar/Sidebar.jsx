@@ -1,6 +1,8 @@
 import React from 'react'
 import './sidebar.css'
-import { Event, Chat, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, VideoLabel, WorkOutline, Bookmark } from "@material-ui/icons"
+import {Users} from '../../dummyData'
+import { Event, Chat, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline, Bookmark } from "@material-ui/icons"
+import CloseFriend from '../closeFriend/CloseFriend'
 function Sidebar() {
   return (
     <div className='sidebar'>
@@ -46,35 +48,9 @@ function Sidebar() {
         <button className='sidebarButton'>Show More</button>
         <hr className='sidebarHr'></hr>
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
+          {Users.map(u => (
+            <CloseFriend key = {u.id} user = {u} />
+          ))}
         </ul>
       </div>
     </div>
